@@ -1,1 +1,20 @@
-<h1>I am the Show page for the list of movies and bookmarks</h1>
+<div class="container col">
+  <h1 class="m-5">List: <%= @list.name.capitalize %></h1>
+  <h2 class="m-3">Movies:</h2>
+
+  <div class="list-container d-grid justify-content-center">
+    <div class="row d-grid justify-content-center">
+      <% @list.movies.each do |movie| %>
+        <div class="card p-0 m-3" style= "min-width: 18rem">
+          <img class="card-img-top"  src=<%= movie.poster_url%> alt="poster">
+          <div class="card-body">
+            <h5 class="card-title"> <%= movie.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= movie.rating %></h6>
+            <p class="card-text"><%= movie.overview %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
